@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0668F3D9-7658-421A-B702-1CBEBE287063}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMARTBillingReconciliation</RootNamespace>
+    <AssemblyName>SMARTBillingReconciliation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>vault17018.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApplicationSecurity">
+      <HintPath>..\..\..\ApplicationSecurity\ApplicationSecurity\bin\Debug\ApplicationSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R1 2019\Bin40\TelerikExport.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationUtil\ExceptionListDefinition.cs" />
+    <Compile Include="ApplicationUtil\ImportFileDefinition.cs" />
+    <Compile Include="ApplicationUtil\MemoryManagement.cs" />
+    <Compile Include="BillingReconModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingReconModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingReconModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingReconModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingReconModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BillingReconStatusView.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingTransaction.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingTransactionsListingView.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientBillingInfoView.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_ClientCode.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_Config.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DiaryTemplate.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exception\FrmExceptionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exception\FrmExceptionList.Designer.cs">
+      <DependentUpon>FrmExceptionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowFileImport.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoundReconTransaction.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWaitDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWaitDialogue.Designer.cs">
+      <DependentUpon>FrmWaitDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Get123ClaimTransactionsFromImport_Result.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDuplicateImports_Result.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetJobClaimTransactionsFromImport_Result.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetUnfoundImports_Result.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetVariantRegionImports_Result.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Import\FrmFileImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import\FrmFileImport.Designer.cs">
+      <DependentUpon>FrmFileImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthOfTheYear.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaidTransaction.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadForm1.Designer.cs">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegionView.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSecurityConfiguration.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUser.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUserAccess.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUserSetting.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUserView.cs">
+      <DependentUpon>BillingReconModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\FrmClawBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\FrmClawBack.Designer.cs">
+      <DependentUpon>FrmClawBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\FrmManualPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\FrmManualPresentation.Designer.cs">
+      <DependentUpon>FrmManualPresentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\FrmTicketRecordDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\FrmTicketRecordDisplay.Designer.cs">
+      <DependentUpon>FrmTicketRecordDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmExceptionDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmExceptionDisplay.Designer.cs">
+      <DependentUpon>FrmExceptionDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmFoundTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmFoundTransactions.Designer.cs">
+      <DependentUpon>FrmFoundTransactions.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Exception\FrmExceptionList.resx">
+      <DependentUpon>FrmExceptionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWaitDialogue.resx">
+      <DependentUpon>FrmWaitDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import\FrmFileImport.resx">
+      <DependentUpon>FrmFileImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="RadForm1.resx">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Transaction\FrmClawBack.resx">
+      <DependentUpon>FrmClawBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\FrmManualPresentation.resx">
+      <DependentUpon>FrmManualPresentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\FrmTicketRecordDisplay.resx">
+      <DependentUpon>FrmTicketRecordDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmExceptionDisplay.resx">
+      <DependentUpon>FrmExceptionDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmFoundTransactions.resx">
+      <DependentUpon>FrmFoundTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <EntityDeploy Include="BillingReconModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BillingReconModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BillingReconModel.edmx.diagram">
+      <DependentUpon>BillingReconModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BillingTransactionsListingView.datasource" />
+    <None Include="Properties\DataSources\MonthOfTheYear.datasource" />
+    <None Include="Properties\DataSources\RegionView.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--sirinie -->
+    <None Include="Resources\Apps-system-software-update-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BillingReconModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BillingReconModel.Context.cs</LastGenOutput>
+      <DependentUpon>BillingReconModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="BillingReconModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BillingReconModel.edmx</DependentUpon>
+      <LastGenOutput>BillingReconModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="vault17018.ico" />
+    <None Include="Resources\file-manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ShouldAddDPIScalingManifest="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

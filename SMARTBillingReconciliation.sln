@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMARTBillingReconciliation", "SMARTBillingReconciliation\SMARTBillingReconciliation.csproj", "{0668F3D9-7658-421A-B702-1CBEBE287063}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0668F3D9-7658-421A-B702-1CBEBE287063}.Debug|x86.ActiveCfg = Debug|x86
+		{0668F3D9-7658-421A-B702-1CBEBE287063}.Debug|x86.Build.0 = Debug|x86
+		{0668F3D9-7658-421A-B702-1CBEBE287063}.Release|x86.ActiveCfg = Release|x86
+		{0668F3D9-7658-421A-B702-1CBEBE287063}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32C83FDD-A7DB-48EB-AFF6-AA5648AC0414}
+	EndGlobalSection
+EndGlobal
